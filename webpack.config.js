@@ -8,13 +8,14 @@ module.exports = {
     entry: ["@babel/polyfill", "./src/index.jsx"],
     output: {
         path: path.resolve(__dirname, "build"),
-        filename: "[name].[fullhash].js"
+        filename: "[name].[contenthash].js",
+        publicPath: '/',
     },
     devServer: {
         port: 3000
     },
     plugins: [
-        new HtmlWebpackPlugin({template: "./src/index.html"}),
+        new HtmlWebpackPlugin({template: "./src/index.html", favicon: './src/img/favicon.svg'}),
         new CleanWebpackPlugin(),
         new Dotenv()
     ],
@@ -25,16 +26,7 @@ module.exports = {
         rules: [
             {
                 test: /\.(svg|jpg|jpeg)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[ext]',
-                            outputPath: 'img/',
-                            publicPath: 'img/',
-                        }
-                    }
-                ]
+                type: 'asset/resource'
             },
             {
                 test: /.(css|scss)$/,

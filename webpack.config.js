@@ -8,7 +8,7 @@ module.exports = {
     entry: ["@babel/polyfill", "./src/index.jsx"],
     output: {
         path: path.resolve(__dirname, "build"),
-        filename: "[name].[hash].js"
+        filename: "[name].[fullhash].js"
     },
     devServer: {
         port: 3000
@@ -24,12 +24,30 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(css|scss)$/,
-                use: ["style-loader", "css-loader", "sass-loader"]
+                test: /\.(svg|jpg|jpeg)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'img/',
+                            publicPath: 'img/',
+                        }
+                    }
+                ]
             },
             {
-                test: /\.(jpg|jpeg|png|svg)$/,
-                use: ["file-loader"]
+                test: /.(css|scss)$/,
+                use: [
+                    {
+                        loader: "style-loader",
+                        options: {
+                            injectType: "singletonStyleTag",
+                        },
+                    },
+                    "css-loader",
+                    "sass-loader",
+                ],
             },
             {
                 test: /\.m?jsx$/,
@@ -43,5 +61,4 @@ module.exports = {
             }
         ]
     }
-
 }

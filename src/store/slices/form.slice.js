@@ -2,11 +2,14 @@ import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
     title: 'Hello',
+    name: 'Hello',
+    email: 'Hello',
+    phone: 'Hello',
     error: false
 };
 
 const formSlice = createSlice({
-    name: 'todoInput',
+    name: 'form',
     initialState,
     reducers: {
         setTitle: (state, action) => {

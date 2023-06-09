@@ -1,0 +1,66 @@
+@import '/src/styles/fonts';
+.input-container-container{
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input {
+  height: 54px;
+  width: 380px;
+  border: 1px solid #D0CFCF;
+  background-color: #F8F8F8;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+//
+//.input, .label .text {
+//  font-family: 'Nunito', sans-serif;
+//}
+
+.label .text {
+  transition: all 0.15s ease-out;
+  color: grey;
+}
+
+.input:focus {
+  outline: none;
+  border: 2px solid #00BDD3;
+}
+
+.input:focus + .label .text, :not(input[value=""]) + .label .text {
+  font-size: 12px;
+  transform: translate(0, -100%);
+  background-color: #F8F8F8;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.input:focus + .label .text {
+  color: #00BDD3;
+}
+
+.helper-text{
+  height: 0;
+  position: relative;
+  font-size: 12px;
+  line-height: 14px;
+  color: #7E7E7E;
+  top: 4px;
+  left: 16px;
+}

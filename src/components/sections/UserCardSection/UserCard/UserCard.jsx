@@ -12,10 +12,6 @@ export const UserCard = ({user}) => {
     return (
         <div className={styles['user-card']}>
             <img src={user.photo} alt={user.name} className={styles['user-img']}/>
-            <span title="Це підказка">
-                {truncateString(user.name)}
-            </span>
-
             <Text>
                 <span title="Це підказка">
                 {truncateString(user.name)}

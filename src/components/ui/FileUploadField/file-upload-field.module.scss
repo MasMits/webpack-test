@@ -19,7 +19,7 @@
   border-radius: 4px;
 
   &:after {
-    content: attr(data-text);
+    content: attr(aria-label);
     position: absolute;
     top: 0;
     left: 0;

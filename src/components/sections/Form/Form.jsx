@@ -11,7 +11,7 @@ import {
     setFile,
     setRole,
 } from "../../../store/slices/form.slice";
-import {submitForm1} from "../../../store/api/api";
+import {submitForm} from "../../../store/api/api";
 
 export const Form = () => {
     const {fields: {name, email, phone, file, role}} = useSelector((state) => state.form);
@@ -19,7 +19,7 @@ export const Form = () => {
     const handleClick = () => {
         console.log('Click')
         const fields = {name, email, phone, file, role}
-        submitForm1(fields);
+        submitForm(fields);
     };
     return (
         <div className={styles.form}>

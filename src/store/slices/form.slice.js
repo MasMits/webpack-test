@@ -14,7 +14,7 @@ const initialState = {
             value: '',
             error: null,
         },
-        file: null,
+        file: '',
         role: '',
     },
     error: null,

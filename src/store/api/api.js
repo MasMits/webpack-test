@@ -1,26 +1,26 @@
 export async function getToken() {
-    console.log('getToken')
     try {
         const response = await fetch('https://frontend-test-assignment-api.abz.agency/api/v1/token');
         const data = await response.json();
-        console.log(data);
-        return data.token
+        return data.token;
     } catch (error) {
-        // process network errors
+        console.log('process network errors:', error);
     }
 }
 
-export async function submitForm1(fields) {
+export async function submitForm(fields) {
     try {
+        const img = await fetch(fields.file);
+        const responseIMG = await img.blob();
+        const file = new File([responseIMG], 'filename', { type: responseIMG.type });
+        URL.revokeObjectURL(fields.file);
         const formData = new FormData();
-        formData.append('position_id', 1);
-        formData.append('name', fields.name);
-        formData.append('email', fields.email);
-        formData.append('phone', fields.phone);
-        formData.append('photo', fields.file);
-        const token = await getToken()
-        console.log(token)
-        console.log(formData)
+        formData.append('photo', file);
+        formData.append('position_id', 2);
+        formData.append('name', fields.name.value);
+        formData.append('email', fields.email.value);
+        formData.append('phone', fields.phone.value);
+        const token = await getToken();
         const response = await fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users', {
             method: 'POST',
             body: formData,
@@ -28,15 +28,13 @@ export async function submitForm1(fields) {
                 'Token': token,
             },
         });
-        // console.log(data);
-        if (response.status === 200) {
+        if (response.status === 201) {
             const data = await response.json();
             console.log(data);
         } else {
             console.log('Unexpected response:', response);
         }
     } catch (error) {
-        console.log('process network errors:' + error);
-        // process network errors
+        console.log('process network errors:', error);
     }
 }

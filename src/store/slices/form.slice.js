@@ -14,7 +14,10 @@ const initialState = {
             value: '',
             error: null,
         },
-        file: '',
+        file: {
+            value: '',
+            error: null,
+        },
         role: '',
     },
     error: null,
@@ -31,11 +34,8 @@ const formSlice = createSlice({
         },
         setFieldError: (state, action) => {
             const {field, error} = action.payload;
+            console.log(error);
             state.fields[field].error = error;
-        },
-        setFile: (state, action) => {
-            console.log(action.payload)
-            state.fields.file = action.payload;
         },
         setRole: (state, action) => {
             state.fields.role = action.payload;
@@ -46,25 +46,15 @@ const formSlice = createSlice({
         setIsSubmitting: (state, action) => {
             state.isSubmitting = action.payload;
         },
-        resetForm: (state) => {
-            Object.keys(state.fields).forEach((field) => {
-                state.fields[field].value = '';
-                state.fields[field].error = null;
-            });
-            state.error = null;
-            state.isSubmitting = false;
-        },
     },
 });
 
 export const {
     setFieldValue,
     setFieldError,
-    setFile,
     setRole,
     setError,
     setIsSubmitting,
-    resetForm,
 } = formSlice.actions;
 
 export default formSlice.reducer;

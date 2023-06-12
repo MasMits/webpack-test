@@ -10,7 +10,7 @@ export async function getToken() {
 
 export async function submitForm(fields) {
     try {
-        const img = await fetch(fields.file);
+        const img = await fetch(fields.file.value);
         const responseIMG = await img.blob();
         const file = new File([responseIMG], 'filename', { type: responseIMG.type });
         URL.revokeObjectURL(fields.file);

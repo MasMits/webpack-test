@@ -28,10 +28,6 @@
   align-items: center;
   pointer-events: none;
 }
-//
-//.input, .label .text {
-//  font-family: 'Nunito', sans-serif;
-//}
 
 .label .text {
   transition: all 0.15s ease-out;
@@ -41,6 +37,10 @@
 .input:focus {
   outline: none;
   border: 2px solid #00BDD3;
+}
+.error:focus{
+  outline: none;
+  border: 2px solid #CB3D40;
 }
 
 .input:focus + .label .text, :not(input[value=""]) + .label .text {
@@ -53,6 +53,10 @@
 
 .input:focus + .label .text {
   color: #00BDD3;
+}
+
+.error:focus + .label .text {
+  color: #CB3D40;
 }
 
 .helper-text{

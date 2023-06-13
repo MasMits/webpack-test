@@ -8,7 +8,7 @@ import styles from './user-card-section.module.scss'
 
 export const UsersCardSection = () => {
     const dispatch = useDispatch();
-    const {users, pages, isLoading} = useSelector((state) => state.users);
+    const {users, pages, isLoading, isShowMore} = useSelector((state) => state.users);
 
     useEffect(() => {
          dispatch(fetchUsers())
@@ -22,7 +22,7 @@ export const UsersCardSection = () => {
             <div className={styles['user-card-section']}>
                 {users.map((user) => <UserCard key={user.id} user={user}/>)}
             </div>
-            <Button onClick={() => {dispatch(fetchUsers(pages))}}> Show more</Button>
+            <Button onClick={() => {dispatch(fetchUsers(pages))}} disabled={!isShowMore}> Show more</Button>
         </div>
     );
 };

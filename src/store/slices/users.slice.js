@@ -4,6 +4,7 @@ const initialState = {
     users: [],
     pages: 1,
     isLoading: true,
+    isShowMore: true,
     error: ''
 };
 
@@ -23,8 +24,14 @@ const userSlice = createSlice({
             state.isLoading = false;
             state.error = action.payload;
         },
-        PagesIncrimination: (state) => {
+        pagesIncrimination: (state) => {
             state.pages = state.pages + 1;
+        },
+        resetPages: (state) => {
+            state.pages = 1;
+        },
+        setIsShowMore: (state, action) => {
+            state.isShowMore = action.payload;
         },
     },
 });
@@ -36,13 +43,21 @@ export const fetchUsers = (page = 1) => {
             const response = await fetch(`https://frontend-test-assignment-api.abz.agency/api/v1/users?page=${page}&count=6`);
             const data = await response.json();
             console.log(data);
+            console.log('page');
+            console.log(page);
             dispatch(fetchUsersSuccess(data.users));
-            dispatch(PagesIncrimination());
+            if(page === 1){
+                dispatch(resetPages());
+            }
+
+            dispatch(pagesIncrimination());
+            dispatch(setIsShowMore(page < data.total_pages));
+
         } catch (error) {
             dispatch(fetchUsersError(error));
         }
     };
 };
 
-export const {fetchUsersStart, fetchUsersSuccess, fetchUsersError, PagesIncrimination} = userSlice.actions;
+export const {fetchUsersStart, fetchUsersSuccess, fetchUsersError, pagesIncrimination, resetPages, setIsShowMore} = userSlice.actions;
 export default userSlice.reducer;

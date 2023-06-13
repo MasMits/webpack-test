@@ -15,3 +15,8 @@
 .action-btn:hover{
     background: #FFE302;
 }
+
+.action-btn:disabled{
+    background: #B4B4B4;
+    color: rgba(255, 255, 255, 0.87);
+}

@@ -18,7 +18,10 @@ const initialState = {
             value: '',
             error: null,
         },
-        role: '',
+        role: {
+            value: null,
+            error: '',
+        },
     },
     error: null,
     isSubmitting: false,

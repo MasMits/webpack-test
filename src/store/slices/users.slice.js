@@ -12,9 +12,6 @@ const userSlice = createSlice({
     name: 'users',
     initialState,
     reducers: {
-        fetchUsersStart: (state) => {
-            state.isLoading = true;
-        },
         fetchUsersSuccess: (state, action) => {
             state.isLoading = false;
             state.error = null;
@@ -36,5 +33,5 @@ const userSlice = createSlice({
     },
 });
 
-export const {fetchUsersStart, fetchUsersSuccess, fetchUsersError, pagesIncrimination, resetPages, setIsShowMore} = userSlice.actions;
+export const { fetchUsersSuccess, fetchUsersError, pagesIncrimination, resetPages, setIsShowMore} = userSlice.actions;
 export default userSlice.reducer;

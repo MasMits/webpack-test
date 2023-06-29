@@ -4,6 +4,7 @@ import {fetchUsers} from "../../../store/actions/users";
 import {UserCard} from "./UserCard";
 import {Heading} from "../../ui/Heading";
 import {Button} from "../../ui/Button";
+import {Spinner} from "../../ui/Spinner";
 import styles from './user-card-section.module.scss'
 
 export const UsersCardSection = () => {
@@ -11,10 +12,10 @@ export const UsersCardSection = () => {
     const {users, pages, isLoading, isShowMore} = useSelector((state) => state.users);
 
     useEffect(() => {
-         dispatch(fetchUsers())
+        dispatch(fetchUsers())
     }, [])
 
-    if (isLoading) return <div>Loading...</div>
+    if (isLoading) return <Spinner/>
 
     return (
         <div className={styles.section}>

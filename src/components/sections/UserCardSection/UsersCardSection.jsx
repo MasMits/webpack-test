@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {fetchUsers} from "../../../store/slices/users.slice";
+import {fetchUsers} from "../../../store/actions/users";
 import {UserCard} from "./UserCard";
 import {Heading} from "../../ui/Heading";
-import {Button} from "../../ui/Buttons";
+import {Button} from "../../ui/Button";
 import styles from './user-card-section.module.scss'
 
 export const UsersCardSection = () => {

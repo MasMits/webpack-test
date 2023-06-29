@@ -1,7 +1,7 @@
 import React from 'react';
 import {Heading} from "../../ui/Heading";
 import './banner.module.scss';
-import {Button} from "../../ui/Buttons";
+import {Button} from "../../ui/Button";
 import {Text} from "../../ui/Text";
 import styles from './banner.module.scss'
 

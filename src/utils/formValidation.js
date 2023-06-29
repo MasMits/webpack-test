@@ -1,4 +1,3 @@
-// import { validateImgSize } from "../helpers/";
 import * as yup from 'yup';
 
 let emailRegEx =

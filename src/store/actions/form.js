@@ -16,7 +16,7 @@ export async function submitForm(fields) {
         URL.revokeObjectURL(fields.file);
         const formData = new FormData();
         formData.append('photo', file);
-        formData.append('position_id', 2);
+        formData.append('position_id', fields.role.activeOption);
         formData.append('name', fields.name.value);
         formData.append('email', fields.email.value);
         formData.append('phone', fields.phone.value);

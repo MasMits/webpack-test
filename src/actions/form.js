@@ -1,6 +1,6 @@
 export async function getToken() {
     try {
-        const response = await fetch(`${process.env.API_KEY}/v1/token`);
+        const response = await fetch(`${process.env.API_KEY}/token`);
         const data = await response.json();
         return data.token;
     } catch (error) {

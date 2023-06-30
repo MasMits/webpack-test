@@ -1,8 +1,8 @@
 import React from 'react';
-import {Heading} from "../../ui/Heading";
+import {Heading} from "../../common/Heading";
 import './banner.module.scss';
-import {Button} from "../../ui/Button";
-import {Text} from "../../ui/Text";
+import {Button} from "../../common/Button";
+import {Text} from "../../common/Text";
 import styles from './banner.module.scss'
 
 export const Banner = () => {

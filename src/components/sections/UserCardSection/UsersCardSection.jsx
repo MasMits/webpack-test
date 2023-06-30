@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {fetchUsers} from "../../../store/actions/users";
+import {fetchUsers} from "../../../actions/users";
 import {UserCard} from "./UserCard";
-import {Heading} from "../../ui/Heading";
-import {Button} from "../../ui/Button";
-import {Spinner} from "../../ui/Spinner";
+import {Heading} from "../../common/Heading";
+import {Button} from "../../common/Button";
+import {Spinner} from "../../common/Spinner";
 import styles from './user-card-section.module.scss'
 
 export const UsersCardSection = () => {

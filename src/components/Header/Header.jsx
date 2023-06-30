@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from "../../img/logo.svg";
-import {Button} from "../ui/Button";
+import {Button} from "../common/Button";
 import styles from './header.module.scss'
 
 export const Header = () => {

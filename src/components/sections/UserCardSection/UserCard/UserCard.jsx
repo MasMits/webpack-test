@@ -1,7 +1,7 @@
 import React from 'react';
-import {Text} from "../../../ui/Text";
+import {Text} from "../../../common/Text";
 import styles from './user-card.module.scss'
-import {Tooltip} from "../../../ui/Tooltip";
+import {Tooltip} from "../../../common/Tooltip";
 
 export const UserCard = ({user}) => {
     return (

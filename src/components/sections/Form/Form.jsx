@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react';
-import {Heading} from "../../ui/Heading";
-import {Button} from "../../ui/Button";
-import {FileUploadField} from "../../ui/FileUploadField";
-import {Input} from "../../ui/Input";
-import {RadioButtons} from "../../ui/RadioButtons";
+import {Heading} from "../../common/Heading";
+import {Button} from "../../common/Button";
+import {FileUploadField} from "../../common/FileUploadField";
+import {Input} from "../../common/Input";
+import {RadioButtons} from "../../common/RadioButtons";
 import {useDispatch, useSelector} from "react-redux";
 import {setIsSubmitting, setRole} from "../../../store/slices/form.slice";
-import {submitForm} from "../../../store/actions/form";
-import {fetchPositions} from '../../../store/actions/positions'
+import {submitForm} from "../../../actions/form";
+import {fetchPositions} from '../../../actions/positions'
 import successImage from '../../../img/success-image.svg'
 import styles from './form.module.scss'
 

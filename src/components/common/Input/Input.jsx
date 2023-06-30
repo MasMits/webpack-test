@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
 import styles from './input.module.scss'
-import {validationSchema} from "../../../utils/formValidation";
+import {validationSchema} from "../../sections/Form/validationSchema";
 import {
     setFieldValue,
     setFieldError,

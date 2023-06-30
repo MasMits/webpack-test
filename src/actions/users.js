@@ -4,7 +4,7 @@ import {
     pagesIncrimination,
     resetPages,
     setIsShowMore
-} from "../slices/users.slice";
+} from "../store/slices/users.slice";
 
 export const fetchUsers = (page = 1) => {
     return async (dispatch) => {

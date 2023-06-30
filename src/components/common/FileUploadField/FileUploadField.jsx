@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './file-upload-field.module.scss'
 import {useDispatch} from "react-redux";
-import {validationSchema} from "../../../utils/formValidation";
+import {validationSchema} from "../../sections/Form/validationSchema";
 import {setFieldError, setFieldValue} from "../../../store/slices/form.slice";
 
 export const FileUploadField = ({file}) => {

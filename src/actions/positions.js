@@ -1,4 +1,4 @@
-import {setOptions} from "../slices/form.slice";
+import {setOptions} from "../store/slices/form.slice";
 
 
 export const fetchPositions = () => {

@@ -11,7 +11,7 @@ export async function getToken() {
     }
 }
 
-export async function submitForm(fields) {
+export function submitForm(fields) {
     return async (dispatch) => {
         try {
             const img = await fetch(fields.file.value);

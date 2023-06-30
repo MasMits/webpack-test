@@ -1,6 +1,6 @@
 export async function getToken() {
     try {
-        const response = await fetch('https://frontend-test-assignment-api.abz.agency/api/v1/token');
+        const response = await fetch(`${process.env.API}/v1/token`);
         const data = await response.json();
         return data.token;
     } catch (error) {
@@ -21,7 +21,7 @@ export async function submitForm(fields) {
         formData.append('email', fields.email.value);
         formData.append('phone', fields.phone.value);
         const token = await getToken();
-        const response = await fetch('https://frontend-test-assignment-api.abz.agency/api/v1/users', {
+        const response = await fetch(`${process.env.API}/users`, {
             method: 'POST',
             body: formData,
             headers: {

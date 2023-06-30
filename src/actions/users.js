@@ -9,7 +9,7 @@ import {
 export const fetchUsers = (page = 1) => {
     return async (dispatch) => {
         try {
-            const response = await fetch(`https://frontend-test-assignment-api.abz.agency/api/v1/users?page=${page}&count=6`);
+            const response = await fetch(`${process.env.API}/users?page=${page}&count=6`);
             const data = await response.json();
             dispatch(fetchUsersSuccess(data.users));
             if(page === 1){

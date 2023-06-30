@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Tooltip.module.scss'
+import styles from './tooltip.module.scss'
 
 export const Tooltip = ({children}) => {
     function truncateString(str) {

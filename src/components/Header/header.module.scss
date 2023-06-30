@@ -1,4 +1,14 @@
 @import '/src/styles/color-constants';
+@import '/src/styles/adaptive';
+
+
+.header_container{
+    width: 100vw;
+    background-color: $surface-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .header {
     left: 0;
@@ -9,9 +19,19 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 60px;
+    @media #{$media-query-mobile} {
+        padding: 0 16px;
+    }
+    @media #{$media-query-tablet} {
+        padding: 0 32px;
+    }
+    @media #{$media-query-desktop} {
+        padding: 0 60px;
+    }
+
     height: 60px;
-    background-color: $surface-color;
+    width: 100%;
+    max-width: $max-width-container;
     color: $primary-text-color;
 }
 

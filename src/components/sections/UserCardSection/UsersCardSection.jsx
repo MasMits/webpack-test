@@ -19,11 +19,17 @@ export const UsersCardSection = () => {
 
     return (
         <div className={styles.section}>
-            <Heading> Working with GET request </Heading>
-            <div className={styles['user-card-section']}>
-                {users.map((user) => <UserCard key={user.id} user={user}/>)}
+            <div className={styles.header}><Heading> Working with GET request </Heading></div>
+            <div className={styles.outer_container}>
+                <div className={styles.inner_container}>
+                    <div className={styles['user-card-section']}>
+                        {users.map((user) => <UserCard key={user.id} user={user}/>)}
+                    </div>
+                </div>
             </div>
-            <Button onClick={() => {dispatch(fetchUsers(pages))}} disabled={!isShowMore}> Show more</Button>
+            <Button onClick={() => {
+                dispatch(fetchUsers(pages))
+            }} disabled={!isShowMore}> Show more</Button>
         </div>
     );
 };

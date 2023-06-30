@@ -1,0 +1,11 @@
+$mobile-breakpoint: 560px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1024px;
+$wide-desktop-breakpoint: 2560px;
+
+$media-query-mobile: "only screen and (max-width: #{$mobile-breakpoint})";
+$media-query-tablet: "only screen and (min-width: #{$mobile-breakpoint}) and (max-width: #{$tablet-breakpoint})";
+$media-query-wide-desktop: "only screen and (min-width: #{$wide-desktop-breakpoint})";
+$media-query-desktop: "only screen and (min-width: #{$tablet-breakpoint})";
+
+$max-width-container: 1170px;

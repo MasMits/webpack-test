@@ -39,13 +39,16 @@ export const Form = () => {
 
     return (
         <div className={styles.form}>
-            <Heading> Working with POST request </Heading>
-            <Input value={fields.name} placeHolder={'name'}/>
-            <Input value={fields.email} placeHolder={'email'}/>
-            <Input value={fields.phone} placeHolder={'phone'} helperText='+38 (XXX) XXX - XX - XX'/>
-            <RadioButtons value={fields.role} onChange={setRole}/>
-            <FileUploadField file={fields.file}/>
-            <Button onClick={handleClick} disabled={isFormDisable}> Sign up </Button>
+            <div className={styles.section}>
+                <Heading> Working with POST request </Heading>
+                <Input value={fields.name} validateAt='name' placeHolder={'Your name'}/>
+                <Input value={fields.email} validateAt='email' placeHolder={'Email'}/>
+                <Input value={fields.phone} validateAt='phone' placeHolder={'Phone'}
+                       helperText='+38 (XXX) XXX - XX - XX'/>
+                <RadioButtons value={fields.role} onChange={setRole}/>
+                <FileUploadField file={fields.file}/>
+                <Button onClick={handleClick} disabled={isFormDisable}> Sign up </Button>
+            </div>
         </div>
     );
 };

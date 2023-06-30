@@ -7,18 +7,18 @@ import {
     setFieldError,
 } from "../../../store/slices/form.slice";
 
-export const Input = ({value, placeHolder, helperText = ''}) => {
+export const Input = ({value, validateAt, placeHolder, helperText = ''}) => {
     const dispatch = useDispatch();
     const handleChange = event => {
         const newValue = event.target.value;
-        dispatch(setFieldValue({field: placeHolder, value: newValue}));
+        dispatch(setFieldValue({field: validateAt, value: newValue}));
         validationSchema
-            .validateAt(placeHolder, {[placeHolder]: newValue})
+            .validateAt(validateAt, {[validateAt]: newValue})
             .then(() => {
-                dispatch(setFieldError({field: placeHolder, error: ''}));
+                dispatch(setFieldError({field: validateAt, error: ''}));
             })
             .catch(error => {
-                dispatch(setFieldError({field: placeHolder, error: error.message}));
+                dispatch(setFieldError({field: validateAt, error: error.message}));
             })
     };
 
@@ -39,7 +39,7 @@ export const Input = ({value, placeHolder, helperText = ''}) => {
                     <div className={styles.text}>{placeHolder}</div>
                 </label>
             </div>
-            <div className={styles["helper-text"]}>{value.error}</div>
+            <div className={styles["helper-text"]}>{value.error || helperText}</div>
         </div>
     );
 };

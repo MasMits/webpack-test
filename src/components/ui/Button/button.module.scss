@@ -1,7 +1,7 @@
 @import '/src/styles/color-constants';
 
 .action-btn{
-    width: 100px;
+    min-width: 100px;
     height: 34px;
     background: $secondary-color;
     border: 0 solid;
@@ -11,6 +11,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 26px;
+    padding: 0 18px;
 }
 
 .action-btn:hover{

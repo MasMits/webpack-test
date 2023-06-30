@@ -1,8 +1,12 @@
 .form{
+  width: 100%;
+}
+
+.section{
+  margin: 0 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 50px;
-  width: 100%;
 }

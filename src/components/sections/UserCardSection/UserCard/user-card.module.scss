@@ -4,12 +4,13 @@
     z-index: 500;
     border: 0 solid $surface-color;
     background: $surface-color;
-    border-radius: 10px;
+    border-radius: 16px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    width: 1fr;
 }
 
 .user-img{

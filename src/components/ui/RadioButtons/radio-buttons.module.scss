@@ -1,11 +1,24 @@
 @import '/src/styles/color-constants';
+@import '/src/styles/adaptive';
 
 .form {
   display: flex;
   width: 380px;
+  @media #{$media-query-mobile} {
+    max-width: 328px;
+  }
   align-items: start;
   flex-wrap: wrap;
   flex-direction: column;
+  margin: -7px;
+}
+
+.options{
+  display: flex;
+  align-items: start;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 7px;
 }
 
 .heading{
@@ -15,16 +28,18 @@
 .label {
   display: flex;
   cursor: pointer;
-  font-weight: 500;
   position: relative;
   overflow: hidden;
-  margin-bottom: 0.375em;
   .input {
+    width: 20px;
+    height: 20px;
     position: absolute;
     left: -9999px;
     &:checked + span {
       &:before {
-        box-shadow: inset 0 0 0 0.125em $primary-color, inset 0 0 0 0.4em $background-color, inset 0 0 0 1em $primary-color;
+        //box-shadow: inset 0 0 0 0.125em $primary-color,  inset 0 0 0 1em $primary-color;
+        //box-shadow: inset 0 0 0 0.125em $primary-color, inset 0 0 0 0.4em $background-color, inset 0 0 0 1em $primary-color;
+        box-shadow: inset 0 0 0 1px $primary-color, inset 0 0 0 5px $background-color, inset 0 0 0 20px $primary-color;
 
       }
     }
@@ -32,9 +47,9 @@
   .span {
     display: flex;
     align-items: center;
-    padding: 0.375em 0.75em 0.375em 0.375em;
     border-radius: 99em;
     transition: 0.25s ease;
+    padding-right: 16px;
     &:hover {
       background-color: mix($background-color, $primary-color, 84%);
     }
@@ -42,12 +57,12 @@
       display: flex;
       flex-shrink: 0;
       content: "";
-      width: 1.5em;
-      height: 1.5em;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
-      margin-right: 0.375em;
+      margin-right: 12px;
       transition: 0.25s ease;
-      box-shadow: inset 0 0 0 0.125em $border-color;
+      box-shadow: inset 0 0 0 1px $border-color;
     }
   }
 }

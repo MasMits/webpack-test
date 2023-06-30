@@ -7,6 +7,7 @@ export const RadioButtons = ({value, onChange}) => {
     return (
         <form className={styles.form}>
             <div className={styles.heading}> Select your position</div>
+            <div className={styles.options}>
             {value.options.map((option) =>
                 <label className={styles.label} key={option.id}>
                     <input type="radio" name="radio" className={styles.input}
@@ -16,6 +17,7 @@ export const RadioButtons = ({value, onChange}) => {
                     <span className={styles.span}>{option.name}</span>
                 </label>
             )}
+            </div>
         </form>
     );
 };

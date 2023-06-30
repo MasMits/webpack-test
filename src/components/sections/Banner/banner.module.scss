@@ -1,25 +1,49 @@
 @import '/src/styles/color-constants';
+@import '/src/styles/adaptive';
+
 $bg-img: url('../../../img/banner-img.jpeg');
 
 
 .banner-text-area{
-    width: 380px;
+    max-width: 380px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 21px;
+    padding: 164px 16px 0 16px;
+    @media #{$media-query-mobile} {
+        padding-top: 40px;
+    }
+
 }
 
 .banner {
     width: 100vw;
-    height: 650px;
+    max-width: $max-width-container;
+    @media #{$media-query-mobile} {
+        height: 500px;
+    }
+    @media #{$media-query-tablet} {
+        height: 500px;
+    }
+    @media #{$media-query-desktop} {
+        height: 650px;
+    }
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  url('../../../img/banner-img.jpeg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     color: $contrast-text-color;
-    gap: 36px;
+    gap: 32px;
+}
+
+.button{
+    //@media #{$media-query-mobile} {
+    //    margin-top: -32px;
+    //}
 }

@@ -17,6 +17,11 @@ const userSlice = createSlice({
             state.error = null;
             state.users.push(...action.payload);
         },
+        resetUsers: (state) => {
+            state.isLoading = true;
+            state.error = null;
+            state.users = [];
+        },
         fetchUsersError: (state, action) => {
             state.isLoading = false;
             state.error = action.payload;
@@ -33,5 +38,5 @@ const userSlice = createSlice({
     },
 });
 
-export const { fetchUsersSuccess, fetchUsersError, pagesIncrimination, resetPages, setIsShowMore} = userSlice.actions;
+export const { fetchUsersSuccess, resetUsers, fetchUsersError, pagesIncrimination, resetPages, setIsShowMore} = userSlice.actions;
 export default userSlice.reducer;

@@ -13,7 +13,6 @@ export const fetchUsers = (page = 1) => {
             const response = await fetch(`${process.env.API_URL}/users?page=${page}&count=6`);
             const data = await response.json();
             console.log(data);
-
             dispatch(fetchUsersSuccess(data.users));
             if(page === 1){
                 dispatch(resetPages());

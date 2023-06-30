@@ -18,7 +18,7 @@ export const Form = () => {
         dispatch(fetchPositions())
     }, []);
     const handleClick = async () => {
-        await submitForm(fields)
+        await dispatch(submitForm(fields));
         dispatch(setIsSubmitting(true))
     };
     let isFormDisable = false;

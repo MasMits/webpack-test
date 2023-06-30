@@ -1,8 +1,9 @@
+@import '/src/styles/color-constants';
 
 .action-btn{
     width: 100px;
     height: 34px;
-    background: #F4E041;
+    background: $secondary-color;
     border: 0 solid;
     border-radius: 80px;
     font-family: 'Nunito', sans-serif;
@@ -13,10 +14,10 @@
 }
 
 .action-btn:hover{
-    background: #FFE302;
+    background: $hover-secondary-color;
 }
 
 .action-btn:disabled{
-    background: #B4B4B4;
-    color: rgba(255, 255, 255, 0.87);
+    background: $disabled-color;
+    color:     $background-color;
 }

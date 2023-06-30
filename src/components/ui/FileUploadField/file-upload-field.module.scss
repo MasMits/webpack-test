@@ -1,4 +1,4 @@
-@import '/src/styles/fonts';
+@import '/src/styles/color-constants';
 
 .container {
   position: absolute;
@@ -9,13 +9,13 @@
 }
 
 .file-upload-wrapper {
-  $defaultColor: #F8F8F8;
+  $defaultColor: $background-color;
   $height: 54px;
 
   position: relative;
   width: 380px;
   height: $height;
-  border: 1px solid #D0CFCF;
+  border: 1px solid $border-color;
   border-radius: 4px;
 
   &:after {
@@ -23,14 +23,14 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: #F8F8F8;
+    background: $background-color;
     padding: 14px 16px 0 90px;
     display: block;
     max-width: 200px;
     overflow: hidden;
     pointer-events: none;
     z-index: 20;
-    color: #999;
+    color: $secondary-text-color;
     border-radius: 4px;
   }
 
@@ -40,10 +40,10 @@
     top: 0;
     left: 0;
     display: inline-block;
-    border: 1px solid rgba(0, 0, 0, 0.87);
+    border: 1px solid $primary-text-color;
     border-radius: 4px 0 0 4px;
     background: $defaultColor;
-    color: rgba(0, 0, 0, 0.87);
+    color: $primary-text-color;
     z-index: 25;
     padding: 14px 15px;
     pointer-events: none;
@@ -92,7 +92,7 @@
   position: relative;
   font-size: 12px;
   line-height: 14px;
-  color: #7E7E7E;
+  color: $secondary-text-color;
   top: 60px;
   left: 16px;
 }

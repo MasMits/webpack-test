@@ -1,3 +1,4 @@
+@import '/src/styles/color-constants';
 $bg-img: url('../../../img/banner-img.jpeg');
 
 
@@ -19,6 +20,6 @@ $bg-img: url('../../../img/banner-img.jpeg');
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: $contrast-text-color;
     gap: 36px;
 }

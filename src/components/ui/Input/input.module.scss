@@ -1,4 +1,5 @@
-@import '/src/styles/fonts';
+@import '/src/styles/color-constants';
+
 .input-container-container{
   display: flex;
   align-items: start;
@@ -12,8 +13,8 @@
 .input {
   height: 54px;
   width: 380px;
-  border: 1px solid #D0CFCF;
-  background-color: #F8F8F8;
+  border: 1px solid $border-color;
+  background-color: $background-color;
   border-radius: 4px;
   box-sizing: border-box;
   padding: 16px;
@@ -31,32 +32,32 @@
 
 .label .text {
   transition: all 0.15s ease-out;
-  color: grey;
+  color: $secondary-text-color;
 }
 
 .input:focus {
   outline: none;
-  border: 2px solid #00BDD3;
+  border: 2px solid $primary-color;
 }
 .error:focus{
   outline: none;
-  border: 2px solid #CB3D40;
+  border: 2px solid $error-color;
 }
 
 .input:focus + .label .text, :not(input[value=""]) + .label .text {
   font-size: 12px;
   transform: translate(0, -100%);
-  background-color: #F8F8F8;
+  background-color: $background-color;
   padding-left: 4px;
   padding-right: 4px;
 }
 
 .input:focus + .label .text {
-  color: #00BDD3;
+  color: $primary-color;
 }
 
 .error:focus + .label .text {
-  color: #CB3D40;
+  color: $error-color;
 }
 
 .helper-text{
@@ -64,7 +65,7 @@
   position: relative;
   font-size: 12px;
   line-height: 14px;
-  color: #7E7E7E;
+  color: $secondary-text-color;
   top: 4px;
   left: 16px;
 }

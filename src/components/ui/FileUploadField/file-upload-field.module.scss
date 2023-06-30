@@ -1,3 +1,4 @@
+@import '/src/styles/responsive';
 @import '/src/styles/color-constants';
 
 .container {
@@ -6,17 +7,22 @@
   right: 0;
   bottom: 0;
   left: 0;
+  margin-top: -8px;
 }
 
 .file-upload-wrapper {
-  $defaultColor: $background-color;
-  $height: 54px;
-
+  box-sizing: border-box;
   position: relative;
   width: 380px;
-  height: $height;
+  @media #{$media-query-mobile} {
+    max-width: 328px;
+  }
+
+  height: 54px;
   border: 1px solid $border-color;
   border-radius: 4px;
+  margin-top: 3px;
+
 
   &:after {
     content: attr(aria-label);
@@ -24,7 +30,7 @@
     top: 0;
     left: 0;
     background: $background-color;
-    padding: 14px 16px 0 90px;
+    padding: 13px 16px 0 98px;
     display: block;
     max-width: 200px;
     overflow: hidden;
@@ -37,21 +43,23 @@
   &:before {
     content: 'Upload';
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -1px;
+    left: -1px;
     display: inline-block;
     border: 1px solid $primary-text-color;
     border-radius: 4px 0 0 4px;
-    background: $defaultColor;
+    background: $background-color;
     color: $primary-text-color;
     z-index: 25;
-    padding: 14px 15px;
+    padding: 13px 14px;
     pointer-events: none;
+    height: calc(100% + 2px);
+    box-sizing: border-box;
   }
 
   &:hover {
     &:before {
-      background: darken($defaultColor, 10%);
+      background: darken($background-color, 10%);
     }
   }
 

@@ -1,7 +1,7 @@
+const webpack = require('webpack')
 const path = require('path')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     mode: "development",
@@ -17,7 +17,11 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({template: "./src/index.html", favicon: './src/img/favicon.svg'}),
         new CleanWebpackPlugin(),
-        new Dotenv()
+        new webpack.DefinePlugin({
+            'process.env' : {
+                API_KEY : process.env.API_KEY
+            }
+        })
     ],
     stats: {
         children: true

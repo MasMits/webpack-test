@@ -7,10 +7,10 @@ import {
 } from "../store/slices/users.slice";
 
 export const fetchUsers = (page = 1) => {
-    console.log(process.env.API_KEY);
+    console.log(process.env.API_URL);
     return async (dispatch) => {
         try {
-            const response = await fetch(`${process.env.API_KEY}/users?page=${page}&count=6`);
+            const response = await fetch(`${process.env.API_URL}/users?page=${page}&count=6`);
             const data = await response.json();
             console.log(data);
 

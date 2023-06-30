@@ -1,6 +1,6 @@
 export async function getToken() {
     try {
-        const response = await fetch(`${process.env.API_KEY}/token`);
+        const response = await fetch(`${process.env.API_URL}/token`);
         const data = await response.json();
         return data.token;
     } catch (error) {
@@ -21,7 +21,7 @@ export async function submitForm(fields) {
         formData.append('email', fields.email.value);
         formData.append('phone', fields.phone.value);
         const token = await getToken();
-        const response = await fetch(`${process.env.API_KEY}/users`, {
+        const response = await fetch(`${process.env.API_URL}/users`, {
             method: 'POST',
             body: formData,
             headers: {
